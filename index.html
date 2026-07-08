@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus — Precision Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
+    <div class="bg-orb"></div>
+  </div>
+  <div class="noise" aria-hidden="true"></div>
+
+  
+  <div class="toast-container" id="toastContainer"></div>
+
+  <div class="app">
+    
+    <div class="calc-shell" role="application" aria-label="Calculator">
+      <div class="display" id="display">
+        <span class="display-label">Calculus</span>
+        <div class="expression" id="expression" aria-live="polite"></div>
+        <div class="preview" id="preview"></div>
+        <div class="result" id="result" aria-live="assertive">0</div>
+      </div>
+
+      <div class="btn-grid" id="btnGrid">
+        <button class="btn fn" data-action="clear" aria-label="Clear all">AC</button>
+        <button class="btn fn" data-action="backspace" aria-label="Backspace"><i class="fas fa-delete-left"></i></button>
+        <button class="btn op" data-action="percent" aria-label="Percent">%</button>
+        <button class="btn op" data-action="operator" data-value="÷" aria-label="Divide">÷</button>
+
+        <button class="btn" data-action="number" data-value="7">7</button>
+        <button class="btn" data-action="number" data-value="8">8</button>
+        <button class="btn" data-action="number" data-value="9">9</button>
+        <button class="btn op" data-action="operator" data-value="×" aria-label="Multiply">×</button>
+
+        <button class="btn" data-action="number" data-value="4">4</button>
+        <button class="btn" data-action="number" data-value="5">5</button>
+        <button class="btn" data-action="number" data-value="6">6</button>
+        <button class="btn op" data-action="operator" data-value="−" aria-label="Subtract">−</button>
+
+        <button class="btn" data-action="number" data-value="1">1</button>
+        <button class="btn" data-action="number" data-value="2">2</button>
+        <button class="btn" data-action="number" data-value="3">3</button>
+        <button class="btn op" data-action="operator" data-value="+" aria-label="Add">+</button>
+
+        <button class="btn" data-action="negate" aria-label="Toggle sign">+/−</button>
+        <button class="btn" data-action="number" data-value="0">0</button>
+        <button class="btn" data-action="decimal" aria-label="Decimal point">.</button>
+        <button class="btn eq" data-action="equals" aria-label="Equals">=</button>
+      </div>
+
+      <div class="kbd-hint">
+        Keyboard: <kbd>0-9</kbd> <kbd>+-*/</kbd> <kbd>Enter</kbd> <kbd>Esc</kbd> <kbd>Backspace</kbd>
+      </div>
+    </div>
+
+   
+    <aside class="history-panel" aria-label="Calculation history">
+      <div class="history-header">
+        <span class="history-title"><i class="fas fa-clock-rotate-left"></i> History</span>
+        <button class="history-clear" id="clearHistory" aria-label="Clear history">Clear</button>
+      </div>
+      <div class="history-list" id="historyList">
+        <div class="history-empty">
+          <i class="fas fa-calculator"></i>
+          Your calculations will appear here
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
